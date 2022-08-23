@@ -18,9 +18,9 @@ api.get("/status", (req, res) => {
 // to do => por hacer
 // TODO: Aca se registran las rutas
 
-api.use(bookRoutes)
-api.use(clientRoutes)
 api.use(authRoutes)
+api.use(clientRoutes)
+api.use(bookRoutes)
 
 
 export default api

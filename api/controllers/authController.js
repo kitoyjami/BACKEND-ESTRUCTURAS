@@ -62,8 +62,13 @@ const login = async(req, res) =>{
             })
         }
 
+        const expirationDate= new Date()
+        expirationDate.setMinutes(today.getMinutes()+3)
+
+
         const payload = {
-            userId : user.id
+            userId : user.id,
+            expirationDate
         }
 
         const token= jwt.encode(payload,config.jwt.secret)
